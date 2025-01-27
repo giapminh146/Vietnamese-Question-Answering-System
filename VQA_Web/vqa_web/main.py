@@ -11,7 +11,7 @@ class SentenceRequest(BaseModel):
 
 
 # Define a route for processing sentences
-@app.post("/test/")
+@app.post("/vqa/")
 def process_sentences(request: SentenceRequest):
     answer = model.get_answer(request.context, request.question)
-    return {"processed_sentences": answer}
+    return {"Answer": answer}
