@@ -13,11 +13,15 @@ git clone <repository_url>
 cd VQA_Web
 poetry install
 ```
+
 And for running backend
+
 ```bash
 poetry run uvicorn vqa_web.main:app --reload
 ```
+
 And for the request, it should look like this:
+
 ```bash
 fetch("http://127.0.0.1:8000/vqa/", {
     method: "POST",
@@ -32,3 +36,4 @@ fetch("http://127.0.0.1:8000/vqa/", {
     .then((response) => response.json())
     .then((data) => console.log(data));
 ```
+then open live server index.html to use the interface
