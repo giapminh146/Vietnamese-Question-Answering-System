@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./VQA_Web/vqa_web"
+    ]
+}
