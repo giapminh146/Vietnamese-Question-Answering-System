@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi import Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import vqa_web.model as model
@@ -26,9 +27,17 @@ class SentenceRequest(BaseModel):
 
 # Define a route for processing sentences
 @app.post("/vqa/")
-def process_sentences(request: SentenceRequest):
-    answer = model.get_answer(request.context, request.question)
-    return {"Answer": answer}
+async def vqa(request: Request):
+    data = await request.json()
+    context = data.get("context", "")
+    question = data.get("question", "")
+    
+    result = model.get_answer(context, question)
+    
+    return {
+        "Answer": result["answer"],
+        "Model": result["model"]
+    }
 
 if __name__ == "__main__":
     import uvicorn

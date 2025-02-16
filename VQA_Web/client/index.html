@@ -3,26 +3,31 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Chat with AI</title>
+        <title>AI Chat Assistant</title>
         <link rel="stylesheet" href="./style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     </head>
     <body>
         <div class="chat-container">
-            <div class="chat-header">Chat Box</div>
+            <div class="chat-header">
+                <i class="fas fa-robot"></i> Thám tử lừng danh skibidi
+            </div>
             <div class="chat-box" id="chat-box">
             </div>
             <div class="chat-input">
                 <input
                     type="text"
                     id="context-input"
-                    placeholder="Enter context..."
+                    placeholder="Enter context"
                 />
                 <input
                     type="text"
                     id="question-input"
-                    placeholder="Type your question..."
+                    placeholder="Type your question about the context..."
                 />
-                <button onclick="sendMessage()">Send</button>
+                <button onclick="sendMessage()">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                </button>
             </div>
         </div>
 
