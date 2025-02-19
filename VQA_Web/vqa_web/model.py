@@ -46,6 +46,6 @@ def get_answer(context : str, question: str):
             }
     
     return {
-        "answer": "Đoán xem bé đang nghĩ gì",
-        "model": "bé ko biết á 🥺"
+        "answer": "Bạn chờ bot đi ăn bát phở đã nhé",
+        "model": "BARTpho 🥺"
     }
