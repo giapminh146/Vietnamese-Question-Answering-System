@@ -9,6 +9,7 @@ body {
 }
 
 .chat-container {
+    position: relative;
     width: 90%;
     max-width: 800px;
     height: 80vh;
@@ -24,12 +25,25 @@ body {
 .chat-header {
     background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
     color: #fff;
-    padding: 20px;
-    text-align: center;
+    padding: 15px 20px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.title {
     font-size: 24px;
     font-weight: 600;
     letter-spacing: 0.5px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 .chat-box {
@@ -153,7 +167,6 @@ body {
     background: #94a3b8;
 }
 
-/* Add these styles to your existing CSS */
 .model-info {
     display: block;
     font-size: 12px;
@@ -166,4 +179,39 @@ body {
 .model-info i {
     margin-right: 4px;
     color: #6366f1;
+}
+
+.model-selector {
+    display: none;
+}
+
+.model-select {
+    padding: 8px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    width: 250px;
+}
+
+.model-select:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.model-select:focus {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.7);
+}
+
+.model-select option {
+    background-color: #ffffff;
+    color: #4f46e5;
+    padding: 8px;
+    font-weight: 500;
 }

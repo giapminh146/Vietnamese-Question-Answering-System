@@ -3,9 +3,11 @@ let lastContext = "";
 async function sendMessage() {
     const contextInput = document.getElementById("context-input");
     const questionInput = document.getElementById("question-input");
+    const modelSelect = document.getElementById("model-select");
 
     const context = contextInput.value.trim() || lastContext;
     const question = questionInput.value;
+    const selectedModel = modelSelect.value;
 
     if (!context) {
         alert("Please provide context first!");
@@ -55,6 +57,7 @@ async function sendMessage() {
             body: JSON.stringify({
                 context: context,
                 question: question,
+                model: selectedModel
             }),
         });
 

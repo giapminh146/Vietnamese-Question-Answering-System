@@ -31,8 +31,10 @@ async def vqa(request: Request):
     data = await request.json()
     context = data.get("context", "")
     question = data.get("question", "")
+    selected_model = data.get("model", "")  # Get the selected model from request
     
-    result = model.get_answer(context, question)
+    # Pass the selected model to get_answer
+    result = model.get_answer(context, question, selected_model)
     
     return {
         "Answer": result["answer"],
