@@ -21,6 +21,11 @@ def load_model():
         model = AutoModelForQuestionAnswering.from_pretrained(model_checkpoint)
     print("Load model complete.")
 
+def clean_answer(question, answer):
+    if answer.startswith(question):
+        return answer[len(question):].strip()
+    return answer
+
 def get_answer(context: str, question: str, selected_model: str = ""):
     if not selected_model:
         for model_checkpoint in model_checkpoint_list:
@@ -39,8 +44,10 @@ def get_answer(context: str, question: str, selected_model: str = ""):
             start_idx = torch.argmax(start_logits)
             end_idx = torch.argmax(end_logits)
 
-            answer = tokenizer.decode(inputs["input_ids"][0][start_idx:end_idx + 1], skip_special_tokens=True)
+            #answer = tokenizer.decode(inputs["input_ids"][0][start_idx:end_idx + 1], skip_special_tokens=True)
+            answer = clean_answer(question, tokenizer.decode(inputs["input_ids"][0][start_idx:end_idx + 1], skip_special_tokens=True))
             if answer != "":
+
                 return {
                     "answer": answer,
                     "model": model_checkpoint.split('/')[-1]
@@ -62,8 +69,8 @@ def get_answer(context: str, question: str, selected_model: str = ""):
         start_idx = torch.argmax(start_logits)
         end_idx = torch.argmax(end_logits)
 
-        answer = tokenizer.decode(inputs["input_ids"][0][start_idx:end_idx + 1], skip_special_tokens=True)
-        
+        #answer = tokenizer.decode(inputs["input_ids"][0][start_idx:end_idx + 1], skip_special_tokens=True)
+        answer = clean_answer(question, tokenizer.decode(inputs["input_ids"][0][start_idx:end_idx + 1], skip_special_tokens=True))
         return {
             "answer": answer if answer else "Tôi không thể tìm thấy câu trả lời với model này.",
             "model": selected_model
