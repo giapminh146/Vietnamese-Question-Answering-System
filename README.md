@@ -1,11 +1,11 @@
 # Vietnamese Question Answering System
 ## Members
-**Leader**: Giap Do Anh Minh <br/>
-Member: Le Anh Quang  <br/>
-Member: Ho Thanh Thuy Tien <br/>
-Member: Do Minh Quang  <br/>
-Member: Vu Ha Vy <br/>
-Member: Phan Nguyen Tuan Minh
+**Leader**: Giap Do Anh Minh - 22BI13282<br/>
+Member: Le Anh Quang  - 22BI13380<br/>
+Member: Ho Thanh Thuy Tien - 22BI13419<br/>
+Member: Do Minh Quang - 22BI13379 <br/>
+Member: Vu Ha Vy - 22BI13485<br/>
+Member: Phan Nguyen Tuan Minh - 22BI13307
 
 ## About The Project
 In this project, we tried to build a Vietnamese Question Answering system that can help us answer **questions** of a given **context**. We fine-tuned the 4 variants of the BARTpho model: *BARTpho-word*, *BARTpho-syllable*, *BARTpho-word-base*, *BARTpho-syllable-base*. Additionally, we built a user-friendly website interface that allows anyone to interact with our QA System.
