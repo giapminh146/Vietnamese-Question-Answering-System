@@ -50,7 +50,7 @@ fetch("http://127.0.0.1:8000/vqa/", {
 ```
 After that, open the live server on **index.html** to use the interface
 
-In the interface, you can select any model or choose "Auto" mode to provide the best answer among the 4 models.
+In the interface, you can enter the context and your question, then the system will provide the answer. You can select any model or choose "Auto" mode to provide the best answer among the 4 models.
 
 ## Fine-tune and Inference
 If you want to fine-tune the models, you can run the files:
